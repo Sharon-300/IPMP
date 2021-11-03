@@ -2,16 +2,14 @@
 #include<cstdlib>
 using namespace std;
 
+struct node//structure with name node
+{
+	int data;//integer
+	struct node* next;//pointer to the structure
+}*head=NULL;//structure variable
+
 class LL//class with name LL
 {
-	public://access specifier
-	
-		struct node//structure with name node
-		{
-			int data;//integer
-			struct node* next;//pointer to the structure
-		}*head=NULL;//structure variable
-		
 	public://functions of class LL
 		void Insert(int a);
 		void Insert_pos(int a,int n);
@@ -20,7 +18,9 @@ class LL//class with name LL
 		int search(int key);
 		void Del_key(int key);
 		void Display();
+		int Element(int n);
 		void Del_list();
+		struct node * ret_head();
 };
 
 /*function definitions*/
@@ -155,7 +155,23 @@ void LL::Display()//To print the elements in the list
 	}
 }
 
+int LL::Element(int n)
+{
+	struct node* temp=head;
+		
+	for(int i=1;i<n;i++)//Traverse to nth node
+	{
+		temp=temp->next;
+	}
+	return temp->data;	
+}
+
 void LL::Del_list()//To delete entire list
 {
 	head=NULL;//Simply change the head as NULL
+}
+
+struct node * LL::ret_head()//function that returns the pointer head;
+{
+	return head;
 }
