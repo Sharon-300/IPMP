@@ -10,8 +10,8 @@ int main()
 	do
 	{
 		cout<<"\nSelect an operation to be performed on the linked list"<<endl;
-		cout<<"1.Insert Node at the end of list\n2.Insert node at given position\n3.Delete the node with given key\n4.Delete node at given position\n5.Search the position of node for given key\n6.Length of the linked list\n7.Delete entire list\n8.Print the list\n9.Exit"<<endl;
-		cout<<"Enter (1/2/3/4/5/6/7/8): ";cin>>ch;
+		cout<<"1.Insert Node at the end of list\n2.Insert node at given position\n3.Delete the node with given key\n4.Delete node at given position\n5.Search the position of node for given key\n6.Length of the linked list\n7.Delete entire list\n8.Print the list\n9.To print the element at given node\n10.Exit"<<endl;
+		cout<<"Enter (1/2/3/4/5/6/7/8/9/10): ";cin>>ch;
 		switch(ch)
 		{
 			case 1:
@@ -35,7 +35,7 @@ int main()
 				obj.Del_node(n);
 				break;
 			case 5:
-				{
+			{
 				cout<<"\nEnter the element to be searched: ";
 				cin>>key;
 				int pos=obj.search(key);
@@ -44,7 +44,7 @@ int main()
 				else
 					cout<<"\nElement not found."<<endl;
 				break;
-				}
+			}
 			case 6:
 				cout<<"\nLength of Linked List is "<<obj.length()<<endl;
 				break;
@@ -55,9 +55,19 @@ int main()
 				obj.Display();
 				break;
 			case 9:
+			{
+				cout<<"\nEnter the position of node: ";
+				cin>>n;
+				if(n>0 && n<=obj.length())
+					cout<<"Element at node "<<n<<" is "<<obj.Element(n)<<endl;
+				else
+					cout<<"No such position exists"<<endl;
+				break;
+			}
+			case 10:
 				break;
 			default:
 				cout<<"Wrong input"<<endl;
 		}
-	}while(ch!=9);
+	}while(ch!=10);
 }
