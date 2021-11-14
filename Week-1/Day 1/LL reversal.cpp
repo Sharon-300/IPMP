@@ -16,7 +16,7 @@ int main()
 	obj.Insert(5);
 	obj.Insert(6);
 	
-	obj.Display();//Display the linked list
+	obj.Display(head);//Display the linked list
 	
 	struct node * temp=head;//declaring a structure pointer as head
 	struct node * newNode;
@@ -46,7 +46,7 @@ int main()
 	}
 	
 	cout<<"\nAfter Reversing...\n\n";
-	obj.Display();//Display the linked list
+	obj.Display(head);//Display the linked list
 }
 	
 	
