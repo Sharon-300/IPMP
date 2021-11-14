@@ -36,7 +36,7 @@ int main()
 	obj.Insert(4);
 	obj.Insert(5);
 	obj.Insert(6);
-	obj.Display();
+	obj.Display(head);
 	
 	mid1();//Function call
 	mid2();
