@@ -14,8 +14,10 @@ int main()
 	obj.Insert(7);
 	obj.Insert(3);
 	
+	obj.Display(head);
+	
 	int n;
-	cout<<"Enter the value of n for the nth node from the end: ";
+	cout<<"\nEnter the value of n for the nth node from the end: ";
 	cin>>n;
 	
 	int len=obj.length();//finding length of linked list
